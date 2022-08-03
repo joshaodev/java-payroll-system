@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="875.0" stylesheets="@../style/appStyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="payrollsys.controllers.ListaPagamentoController">
+   <children>
+      <VBox prefHeight="510.0" prefWidth="772.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS" />
+                  <HBox alignment="CENTER_RIGHT">
+                     <children>
+                        <JFXDatePicker fx:id="dataPickerDataPagamento" prefHeight="25.0" prefWidth="215.0" />
+                        <JFXButton onAction="#searchPagamento" text="Procurar">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="SEARCH" size="20" />
+                           </graphic>
+                           <styleClass>
+                              <String fx:value="btn-general" />
+                              <String fx:value="btn-main" />
+                           </styleClass>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <VBox VBox.vgrow="ALWAYS">
+               <children>
+                  <TableView fx:id="tabelaPagamento" focusTraversable="false" VBox.vgrow="ALWAYS">
+                     <columns>
+                        <TableColumn fx:id="colCodigo" maxWidth="4000.0" prefWidth="75.0" text="Codigo" />
+                        <TableColumn fx:id="colNome" maxWidth="9000.0" prefWidth="75.0" text="Nome" />
+                        <TableColumn fx:id="colCargo" maxWidth="8000.0" prefWidth="75.0" text="Cargo" />
+                        <TableColumn fx:id="colSalario" prefWidth="75.0" text="Salário" />
+                        <TableColumn fx:id="colFaltas" maxWidth="4000.0" prefWidth="75.0" text="Faltas" />
+                        <TableColumn fx:id="colValorINSS" maxWidth="4000.0" prefWidth="75.0" text="INSS 3%" />
+                        <TableColumn fx:id="colValorIRT" maxWidth="4000.0" prefWidth="75.0" text="IRT" />
+                        <TableColumn fx:id="colTotalDesconto" prefWidth="75.0" text="Total Desconto" />
+                        <TableColumn fx:id="colBonus" prefWidth="75.0" text="Bonus" />
+                        <TableColumn fx:id="colValorAReceber" prefWidth="75.0" text="Valor a receber" />
+                     </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+               </children>
+            </VBox>
+            <HBox prefHeight="50.0" prefWidth="200.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                     <children>
+                        <JFXButton onAction="#actualizarTabela" prefHeight="31.0" prefWidth="136.0" text="Actualizar">
+                           <graphic>
+                              <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../icons/Available%20Updates_26px.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <styleClass>
+                              <String fx:value="btn-general" />
+                              <String fx:value="btn-update" />
+                           </styleClass>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" spacing="5.0">
+                     <children>
+                        <JFXButton onAction="#gerarReport" text="Relatório">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                           <styleClass>
+                              <String fx:value="btn-general" />
+                              <String fx:value="btn-main" />
+                           </styleClass>
+                        </JFXButton>
+                        <JFXButton fx:id="btnEliminar" onAction="#eliminar" prefHeight="31.0" prefWidth="120.0" text="Eliminar">
+                           <graphic>
+                              <FontAwesomeIconView glyphName="TRASH" size="20" />
+                           </graphic>
+                           <styleClass>
+                              <String fx:value="btn-general" />
+                              <String fx:value="btn-delete" />
+                           </styleClass>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

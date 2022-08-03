@@ -1,0 +1,218 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 17/11/2021, 20:51:44
+    Author     : joshtag096
+*/
+
+*{
+    -fx-primary : #F0F1F5;
+    -fx-secondary : #112233;
+    -fx-third : #3F4F5E;
+    -fx-blue-tone : #078DD9;
+    
+    -fx-primarytext : #112233;
+    -fx-secondarytext : #FFFFFF;
+}
+
+.root {
+    -fx-background-color: -fx-primary;
+}
+
+/* BOXES and BARS */
+
+/* box-alert : Login */
+.label-alert-error {
+    -fx-background-color: #FF0000; 
+    -fx-text-fill: #FFFFFF;
+}
+
+
+/* top-bar : Main */
+.top-bar {
+    -fx-background-color: -fx-blue-tone;
+}
+
+.statistics-box {
+    -fx-border-width: 0px 0px 2px 0px;
+    -fx-border-color: transparent transparent #112233 transparent;
+}
+
+.boxes {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 10;
+}
+
+.left-top-bar {
+    -fx-background-color: -fx-secondary;
+    -fx-border-color: transparent transparent #eee transparent;
+}
+/* Menu bar */
+.menu-bar {
+    -fx-background-color: -fx-secondary;
+}
+
+.sub-menu-bar {
+    -fx-background-color: -fx-third;
+}
+
+.sub-menu-bar-text {
+    -fx-fill: -fx-primarytext;
+}
+
+/* ============= */
+
+/* bars*/
+.sidebar {
+    -fx-background-color: #112233;  
+}
+
+.sidebar-user-btn {
+    
+}
+
+.sidebar-btn {
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+    -fx-font-size: 15; 
+    -fx-text-fill: #eeeeee;
+    
+}
+
+.sidebar-btn:hover {
+    -fx-cursor: hand;
+    -fx-background-color: transparent;  
+    -fx-text-fill: #b8b1b1;
+    -fx-border-color: rgb(22, 169, 250);
+    -fx-border-width: 0px 0px 0px 3px;
+}
+
+.sidebar-btn:focused {
+    -fx-background-color: transparent;  
+    -fx-text-fill: #b8b1b1;
+    -fx-border-color: rgb(22, 169, 250);
+    -fx-border-width: 0px 0px 0px 3px;
+}
+
+.sidebar-btn-icon {
+    -fx-fill: #b8b1b1;
+}
+
+
+.title-bar {
+    -fx-background-color: #112233;  
+}
+
+.subtitle-bar {
+    -fx-background-color: #078DD9;
+    -fx-padding: 5px;
+}
+
+/* TEXTS */
+.logo-text {
+    -fx-font-family: "Arial";
+    -fx-fill: #112233;
+    -fx-font-size: 28;
+    -fx-font-weight: bold;
+}
+
+.sublogo-text {
+    -fx-font-family: "Arial";
+    -fx-fill: #112233;
+    -fx-font-size: 13;
+    
+}
+
+.title-text {
+    -fx-font-family: "Arial";
+    -fx-fill: #FFFFFF;
+    -fx-font-size: 25;
+    -fx-font-weight: bold;
+}
+
+.subtitle-text {
+    -fx-font-family: "Arial";
+    -fx-fill: #FFFFFF;
+    -fx-font-size: 18;
+    -fx-font-weight: bold;
+}
+
+
+/*  glyph icons style   */
+.glyph-icon {
+   -fx-fill: #FFFFFF; 
+}
+
+.glyph-black-icon {
+   -fx-fill: #112233; 
+}
+
+.glyph-icon-online {
+   -fx-fill: #00FF19; 
+}
+
+/* BUTTONS ...*/
+.menu-bar-btns {
+    
+}
+
+
+
+.btn-general {
+    -fx-text-fill: #FFFFFF; 
+    -fx-font-size: 15;
+    -fx-font-weight: bold;
+}
+
+.btn-main {
+    -fx-background-color: #112233;  
+}
+
+.btn-update {
+    -fx-background-color: #707070;  
+}
+
+.btn-edit {
+    -fx-background-color: #ED7D31;  
+}
+
+.btn-delete {
+    -fx-background-color: #FF0000;  
+}
+
+.btn-menu {
+    -fx-text-fill: -fx-secondarytext;
+    -fx-font-size: 15;
+    -fx-font-weight: bold;
+}
+
+.btn-menu:hover{
+    -fx-cursor: hand;
+}
+
+
+.btn-menu:focused {
+    -fx-background-color: -fx-secondary;
+    -fx-border-color: -fx-blue-tone;
+    -fx-border-width: 0px 3px 0px 0px;
+}
+
+/* SPECIFICS BUTTONS */
+.btn-username {
+    -fx-cursor: hand;   
+}
+
+.btn-search {
+    -fx-text-fill: #FFFFFF; 
+    -fx-font-size: 15;
+    -fx-font-weight: bold;
+}
+
+/* Boxes */
+.box {
+    -fx-background-color: #FFFFFF;
+}
+

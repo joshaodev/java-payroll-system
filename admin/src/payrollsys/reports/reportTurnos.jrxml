@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportTurnos" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5bb0b077-559a-495c-8f88-a40760c4ea4c">
+	<property name="ireport.zoom" value="1.1000000000000008"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT `idTurno`,
+`nomeTurno` ,
+DATE_FORMAT(`entrada`,'%H:%i:%s') AS horaExtraEntrada,
+DATE_FORMAT(`saida`,'%H:%i:%s') AS horaExtraSaida
+FROM `turno`]]>
+	</queryString>
+	<field name="idTurno" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nomeTurno" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="horaExtraEntrada" class="java.lang.String"/>
+	<field name="horaExtraSaida" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="50" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="35" width="152" height="15" uuid="2b135c9c-465b-44c2-aa3e-a7436428875a"/>
+				<text><![CDATA[(+244) 934 34 41 67]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="152" height="15" uuid="ad874cb3-9cbc-4572-9ee4-f6e5c5453de2"/>
+				<text><![CDATA[Luanda, Kilamba Kiaxe, Sapú]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="255" height="20" uuid="6c0137d3-a02b-4fc2-904d-b8c6f1207515"/>
+				<textElement>
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CONTA 10 - Consultoria e Serviços]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="13" width="168" height="20" uuid="5cab3fd3-6178-4057-a097-44509701347f"/>
+				<textElement>
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lista dos Turnos]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="368" y="18" width="187" height="15" uuid="8ee503f4-7baa-4c0d-b915-04d6f622d32b"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="33" width="555" height="2" uuid="99881c98-a064-4bf2-a810-e59e8abff21f"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="9edff427-c177-43af-b7a6-edfc4feb3b80"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Turno]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="0" width="100" height="20" uuid="5d73dd97-ff91-4505-8ddb-b81c837c097c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Entrada]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="200" y="0" width="100" height="20" uuid="02b4a752-a5e2-45ac-b148-e3ac536c7b2e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Saída]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="8adac6ff-7b9c-4232-86c0-1d96c1c504b6"/>
+				<textFieldExpression><![CDATA[$F{nomeTurno}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="100" height="20" uuid="4486abd1-69ad-4526-90cd-95b73a2e5d0b"/>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[$F{horaExtraEntrada}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="200" y="0" width="100" height="20" uuid="25105338-e3b0-416d-ae04-ea1cd34f030b"/>
+				<textFieldExpression><![CDATA[$F{horaExtraSaida}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

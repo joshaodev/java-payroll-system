@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportFuncionarios" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a34ea85d-6a9c-4201-9b27-dcce0e0b6261">
+	<property name="ireport.zoom" value="1.0000000000000004"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="Table Dataset 1" uuid="6e2637f6-14b8-4436-b49c-d9193ccc8582"/>
+	<queryString>
+		<![CDATA[SELECT `idFuncionario`, `codigo`, `nome`, `endereco`, `dataNascimento`, `genero`, `estadoCivil`, `telefone`, `email`, `dataCadastro`, `salarioBase`, `imagem`, `idTurno`, `idCargo`, `idDepartamento`, `activo` FROM `funcionario`]]>
+	</queryString>
+	<field name="idFuncionario" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nome" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="endereco" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dataNascimento" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="genero" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="estadoCivil" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefone" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="email" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="dataCadastro" class="java.sql.Date">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="salarioBase" class="java.math.BigDecimal">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="imagem" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="idTurno" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="idCargo" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="idDepartamento" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="activo" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="50" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="255" height="20" uuid="e4b4992d-2fb2-45e0-a759-8294cfcdcdab"/>
+				<textElement>
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CONTA 10 - Consultoria e Serviços]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="152" height="15" uuid="598e6c1e-fe70-4f26-b598-0720492ae307"/>
+				<text><![CDATA[Luanda, Kilamba Kiaxe, Sapú]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="35" width="152" height="15" uuid="e9f5014f-918b-4ddd-850b-f9b085f5aaec"/>
+				<text><![CDATA[(+244) 934 34 41 67]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="47" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="15" width="168" height="20" uuid="bae3fb76-0062-4052-9836-cad4955eaffa"/>
+				<textElement>
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lista dos Funcionários]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="368" y="20" width="187" height="15" uuid="bcd9e4eb-e59e-4c45-8825-f5c84ebb11b7"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="35" width="555" height="2" uuid="bb945161-fd4a-4a98-b7ad-d29ad679ec95"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="66" height="20" uuid="a4bcc0a6-13f0-4b28-8ba9-e2f3f25bdae4"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="66" y="0" width="74" height="40" uuid="7f2b368d-9b66-4150-a70e-ce033e25c14c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="0" width="62" height="40" uuid="fcd3bacc-a937-43d4-a37b-077ebd7032e0"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[endereco]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="202" y="2" width="60" height="20" uuid="9b3b0b94-4a7e-45fe-9063-96a5ceb6501d"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Telefone]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="262" y="2" width="61" height="40" uuid="1adaf95e-a14b-402f-9bf3-ea7f7a1b6a9f"/>
+				<textElement>
+					<font isBold="true" isStrikeThrough="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[Data de Nascimento]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="323" y="2" width="60" height="20" uuid="6febe350-4bed-4f02-a68e-6e3cdbb324f7"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Genero]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="383" y="2" width="65" height="20" uuid="3823c7c7-d18e-457f-a37e-f6665131c568"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Estado Civil]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="448" y="0" width="52" height="40" uuid="f08667ca-dc4c-4e05-ba07-09d83cda2a4c"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data do Contrato]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="500" y="2" width="55" height="40" uuid="12706063-19fe-49e9-8d8e-8b20cf61ecf0"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Salário Base]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="39" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="66" height="20" uuid="0854ddd6-67a3-45ad-b7a8-da932f232125"/>
+				<textFieldExpression><![CDATA[$F{codigo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="66" y="0" width="74" height="39" uuid="b56cfe2e-3daf-4ceb-b9f7-5ea7499b17b4"/>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="140" y="0" width="62" height="39" uuid="f0d05ac0-73e3-4170-9326-4a822ae81dbf"/>
+				<textFieldExpression><![CDATA[$F{endereco}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="202" y="0" width="60" height="20" uuid="0329d598-292e-4dc7-8579-25a1c24ddb90"/>
+				<textFieldExpression><![CDATA[$F{telefone}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="262" y="0" width="61" height="20" uuid="ab3d241a-3ac9-4092-b8b4-a33877d99de6"/>
+				<textFieldExpression><![CDATA[$F{dataNascimento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="323" y="0" width="60" height="20" uuid="3b0be520-ea6f-41f5-9ae7-a9e384e31b08"/>
+				<textFieldExpression><![CDATA[$F{genero}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="383" y="0" width="65" height="20" uuid="803c51d6-4296-4cd7-b6d4-58b59e536af1"/>
+				<textFieldExpression><![CDATA[$F{estadoCivil}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="500" y="0" width="55" height="20" uuid="2a40ec50-3620-489e-b18a-313ef674931f"/>
+				<textFieldExpression><![CDATA[$F{salarioBase}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="448" y="0" width="52" height="20" uuid="ebab0f1c-8d71-46cc-8918-b64adc11db5b"/>
+				<textFieldExpression><![CDATA[$F{dataCadastro}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="420" y="17" width="80" height="20" uuid="f9c3d2b0-062a-4330-9e57-76da16f89bb9"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="500" y="17" width="40" height="20" uuid="0bb3feea-b1f7-49dc-a0e7-8241d40e8291"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

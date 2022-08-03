@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportCargos" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3d3089dc-78ea-4add-b18e-403dae1494cc">
+	<property name="ireport.zoom" value="0.9090909090909096"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT `idCargo`, `nomeCargo`, `descricaoCargo` FROM `cargo`]]>
+	</queryString>
+	<field name="idCargo" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nomeCargo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descricaoCargo" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="35" width="152" height="15" uuid="aa885375-0e1a-4597-abfe-f27561dee9f1"/>
+				<text><![CDATA[(+244) 934 34 41 67]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="152" height="15" uuid="b1dcd2ee-d677-49eb-a695-4d2a8ca842d4"/>
+				<text><![CDATA[Luanda, Kilamba Kiaxe, Sapú]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="255" height="20" uuid="afbc266c-cbde-4674-88b3-4129d6cd2e61"/>
+				<textElement>
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CONTA 10 - Consultoria e Serviços]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="37" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="368" y="20" width="187" height="15" uuid="5910414b-d207-4ad2-8aac-926667d60c70"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="15" width="168" height="20" uuid="f8991975-e7fd-4dc5-9d81-89179417cf5a"/>
+				<textElement>
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lista dos Cargos]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="35" width="555" height="2" uuid="620ca50b-e4a0-4fe4-8732-1b8f2061fe4a"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="20" splitType="Stretch">
+			<staticText>
+				<reportElement x="231" y="0" width="100" height="20" uuid="7d018660-2b68-47d0-83ff-b21b2560943e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descrição]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="114" y="0" width="100" height="20" uuid="4dceecb4-9060-4754-8d76-d385e3744d50"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="32" splitType="Stretch">
+			<textField>
+				<reportElement x="114" y="0" width="100" height="32" uuid="aaa98e57-764d-4efa-b43e-95e8a78e3cc6"/>
+				<textFieldExpression><![CDATA[$F{nomeCargo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="231" y="0" width="186" height="32" uuid="0a25633e-446b-4545-a85c-5a0e549daf53"/>
+				<textFieldExpression><![CDATA[$F{descricaoCargo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField evaluationTime="Report">
+				<reportElement x="510" y="27" width="40" height="20" uuid="17fc091a-58c0-42dd-953e-4b47f7ec8684"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="430" y="27" width="80" height="20" uuid="2a22a97a-5c33-4e77-960a-cda26597bfcc"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

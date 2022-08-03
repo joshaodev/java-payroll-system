@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportFolhaSalario" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ac1ffbe4-6451-4e46-a8fe-cb034c610655">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="211"/>
+	<parameter name="codigoFuncionario" class="java.lang.String"/>
+	<parameter name="valorHorasExtras" class="java.lang.Double"/>
+	<parameter name="valorSubsidioFerias" class="java.lang.Double"/>
+	<parameter name="valorSubsidioNatal" class="java.lang.Double"/>
+	<parameter name="salarioBruto" class="java.lang.Double"/>
+	<parameter name="valorDescontosFaltas" class="java.lang.Double"/>
+	<parameter name="irt" class="java.lang.Double"/>
+	<parameter name="segurancaSocial" class="java.lang.Double"/>
+	<parameter name="salarioFinal" class="java.lang.Double"/>
+	<parameter name="dataFolhaSalario" class="java.util.Date"/>
+	<queryString>
+		<![CDATA[SELECT
+     funcionario.`idfuncionario` AS funcionario_idfuncionario,
+     funcionario.`codigo` AS funcionario_codigo,
+     funcionario.`nome` AS funcionario_nome,
+     funcionario.`endereco` AS funcionario_endereco,
+     funcionario.`dataNascimento` AS funcionario_dataNascimento,
+     funcionario.`genero` AS funcionario_genero,
+     funcionario.`estadoCivil` AS funcionario_estadoCivil,
+     funcionario.`telefone` AS funcionario_telefone,
+     funcionario.`salarioBase` AS funcionario_salario_base,
+     funcionario.`idCargo` AS funcionario_idCargo,
+     funcionario.`idDepartamento` AS funcionario_idDepartamento,
+     funcionario.`activo` AS funcionario_activo,
+     departamento.`idDepartamento` AS departameto_idDepartamento,
+     departamento.`nomeDepartamento` AS departameto_nomeDepartamento,
+     cargo.`idCargo` AS cargo_idCargo,
+     cargo.`nomeCargo` AS cargo_nomeCargo
+FROM
+     `departamento` departamento INNER JOIN `funcionario` funcionario ON departamento.`idDepartamento` = funcionario.`idDepartamento`
+     INNER JOIN `cargo` cargo ON funcionario.`idCargo` = cargo.`idCargo`
+WHERE
+     funcionario.`codigo` = $P{codigoFuncionario}]]>
+	</queryString>
+	<field name="funcionario_idfuncionario" class="java.lang.Integer"/>
+	<field name="funcionario_codigo" class="java.lang.String"/>
+	<field name="funcionario_nome" class="java.lang.String"/>
+	<field name="funcionario_endereco" class="java.lang.String"/>
+	<field name="funcionario_dataNascimento" class="java.sql.Date"/>
+	<field name="funcionario_genero" class="java.lang.String"/>
+	<field name="funcionario_estadoCivil" class="java.lang.String"/>
+	<field name="funcionario_telefone" class="java.lang.String"/>
+	<field name="funcionario_salario_base" class="java.math.BigDecimal"/>
+	<field name="funcionario_idCargo" class="java.lang.Integer"/>
+	<field name="funcionario_idDepartamento" class="java.lang.Integer"/>
+	<field name="funcionario_activo" class="java.lang.Integer"/>
+	<field name="departameto_idDepartamento" class="java.lang.Integer"/>
+	<field name="departameto_nomeDepartamento" class="java.lang.String"/>
+	<field name="cargo_idCargo" class="java.lang.Integer"/>
+	<field name="cargo_nomeCargo" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="35" width="152" height="15" uuid="15a4791e-9d2f-44ee-bdbd-68e9fd68647b"/>
+				<text><![CDATA[(+244) 934 34 41 67]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="152" height="15" uuid="a53580d6-f8ce-47c9-9d03-ac96a8666945"/>
+				<text><![CDATA[Luanda, Kilamba Kiaxe, Sapú]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="255" height="20" uuid="2486a24a-5f23-4cf8-bd7d-eaf5f7e29744"/>
+				<textElement>
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CONTA 10 - Consultoria e Serviços]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="15" width="179" height="20" uuid="3ee02881-7b8a-4fa3-9972-5e54273e566d"/>
+				<textElement>
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Folha de Salário do mes]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="33" width="555" height="2" uuid="2eb866c5-44a6-41e4-988e-b52ed03ce8cb"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="141" splitType="Stretch">
+			<textField>
+				<reportElement x="380" y="20" width="135" height="20" uuid="c4d2f3da-0786-46c6-b65d-955c5faa9521"/>
+				<textFieldExpression><![CDATA[$F{funcionario_codigo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="66" y="20" width="161" height="20" uuid="3c5a41c6-f0d0-4181-bc9a-a04c8db70bee"/>
+				<textFieldExpression><![CDATA[$F{funcionario_nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="66" y="39" width="189" height="20" uuid="32fc3440-429f-4bb9-a0dc-bf26037cddba"/>
+				<textFieldExpression><![CDATA[$F{funcionario_endereco}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="66" y="59" width="161" height="20" uuid="4db55285-566f-4364-bbe0-f473121cff72"/>
+				<textFieldExpression><![CDATA[$F{funcionario_genero}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="66" y="79" width="161" height="20" uuid="3ac10cab-ccdd-44e6-8db5-4c258f2fa159"/>
+				<textFieldExpression><![CDATA[$F{funcionario_estadoCivil}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="99" y="99" width="128" height="20" uuid="4b4a01e9-0989-4f8b-9af9-6fff68c41605"/>
+				<textFieldExpression><![CDATA[$F{funcionario_telefone}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="59" width="135" height="20" uuid="8874d1fe-b1aa-425e-9cb8-d06342292a8c"/>
+				<textFieldExpression><![CDATA[$F{cargo_nomeCargo}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="1" y="128" width="555" height="5" uuid="67b13d5f-3332-4329-a3bd-e1f1b869baf9"/>
+			</line>
+			<staticText>
+				<reportElement x="0" y="19" width="66" height="20" uuid="1e521a18-ac6e-48f5-a700-3dc404efa2b4"/>
+				<text><![CDATA[Funcionário :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="39" width="66" height="20" uuid="b62c517d-7f21-45df-8ce5-9ebc10e0f52b"/>
+				<text><![CDATA[Endereço    :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="59" width="66" height="20" uuid="ed2ef909-7995-4a24-a902-88be5a1b7258"/>
+				<text><![CDATA[Genero        :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="79" width="66" height="20" uuid="bcc46c3b-a0ce-4a14-bfa2-b8edf481e9ab"/>
+				<text><![CDATA[Estado civil :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="262" y="40" width="118" height="20" uuid="a1d6dc03-f91c-45dc-8185-ac6730f5bbb8"/>
+				<text><![CDATA[Departamento               :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="262" y="59" width="118" height="20" uuid="bcc5d4fd-a468-4a24-b025-f11346f22f2f"/>
+				<text><![CDATA[Cargo                            :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="99" width="66" height="20" uuid="f3e8d444-1214-4f8e-842c-c053249fde35"/>
+				<text><![CDATA[Telefone     :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="380" y="40" width="135" height="20" uuid="88e6eafe-a1cf-4e45-bd08-b66aa55f2ecb"/>
+				<textFieldExpression><![CDATA[$F{departameto_nomeDepartamento}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="262" y="20" width="118" height="20" uuid="32a27433-97de-4aad-a6d0-b5e2f0dd3b40"/>
+				<text><![CDATA[Código do Funcionário :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="66" y="99" width="30" height="20" uuid="479092de-84bb-454a-bb82-88f28da72996"/>
+				<text><![CDATA[(+244)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="262" y="79" width="118" height="20" uuid="4ec0ab14-61f2-4aaf-bcee-3f3b1561a491"/>
+				<text><![CDATA[Data do Salário             :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="380" y="79" width="55" height="20" uuid="1ad60b9e-a1d3-4087-9815-3c13c33476fe"/>
+				<textFieldExpression><![CDATA[$P{dataFolhaSalario}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="145" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="19" width="99" height="20" uuid="94a56aec-8f89-4e62-9dcc-9c67db1bfc19"/>
+				<text><![CDATA[Horas Extras           : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="59" width="99" height="20" uuid="35d8fddc-3b36-46b1-9c3a-a41b68572ca9"/>
+				<text><![CDATA[Subsídio de Natal   :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="39" width="99" height="20" uuid="1564e185-1c90-4ca1-bd47-a3a2e66a8f70"/>
+				<text><![CDATA[Subsídio de férias   :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="79" width="99" height="20" uuid="43753a7a-1678-41d4-a07c-8660fe9b4480"/>
+				<text><![CDATA[Sálario Bruto           : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="270" y="0" width="110" height="20" uuid="57e0306d-8c34-43a5-b55b-bc8aba36d729"/>
+				<text><![CDATA[Descontos po faltas    : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="270" y="20" width="110" height="20" uuid="6ac80876-7dc0-4a7a-9fb1-2b654cf3ab1a"/>
+				<text><![CDATA[IRT                              :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="270" y="60" width="110" height="20" uuid="071da8cb-b703-4016-863f-4cd59afcd484"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sálario Final               : ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="270" y="40" width="110" height="20" uuid="d592b7b4-b57f-4cac-8f3c-4c8c93de7b4d"/>
+				<text><![CDATA[Segurança Social        :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="99" height="20" uuid="35bf8b23-3b6d-43a7-bb98-b37fd0d49afa"/>
+				<text><![CDATA[Salário Base           : ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="99" y="0" width="139" height="20" uuid="6c14efea-834b-4422-91e8-588f63f68493"/>
+				<textFieldExpression><![CDATA[$F{funcionario_salario_base}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="99" y="20" width="139" height="20" uuid="85fc6c09-0a09-4a02-a597-52e604dc35ab"/>
+				<textFieldExpression><![CDATA[$P{valorHorasExtras}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="99" y="40" width="139" height="20" uuid="a4c97355-863e-4893-bace-1c16ed35e19b"/>
+				<textFieldExpression><![CDATA[$P{valorSubsidioFerias}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="99" y="60" width="139" height="20" uuid="a3fc7698-fd3a-46ed-8092-e172e047b842"/>
+				<textFieldExpression><![CDATA[$P{valorSubsidioNatal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="99" y="80" width="139" height="20" uuid="9bb639a8-83b3-44c4-b88c-8428489c0d0e"/>
+				<textFieldExpression><![CDATA[$P{salarioBruto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="0" width="135" height="20" uuid="3723c292-560d-49fd-9aaf-0cd50f49a341"/>
+				<textFieldExpression><![CDATA[$P{valorDescontosFaltas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="20" width="135" height="20" uuid="90728d2e-03e0-464e-9661-2a21f89bc274"/>
+				<textFieldExpression><![CDATA[$P{irt}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="40" width="135" height="20" uuid="dab229ed-9447-4132-a6ec-b9de5f97ca69"/>
+				<textFieldExpression><![CDATA[$P{segurancaSocial}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="60" width="135" height="20" uuid="4b127a68-fd3f-40a3-859a-b9afdb75b23e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{salarioFinal}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="129" y="130" width="162" height="15" uuid="e09e0ecd-c968-409f-b5cf-f9cff3f4a54f"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="500" y="130" width="40" height="15" uuid="8c98db95-0d47-4657-bcc3-9d23d31b952b"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="420" y="130" width="80" height="15" uuid="cbf5f72e-3df3-4621-bb18-71b850e8477b"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-1" y="130" width="130" height="15" uuid="faa0071f-87d0-49e8-9dd6-c646caf81d3d"/>
+				<text><![CDATA[Folha de salário gerada em ]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

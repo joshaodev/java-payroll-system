@@ -1,0 +1,52 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+
+/* bars*/
+.title-bar {
+    -fx-background-color: #112233;  
+}
+
+.subtitle-bar {
+    -fx-background-color: #078DD9;
+    -fx-padding: 5px;
+}
+
+/* texts*/
+.title-text {
+    -fx-font-family: "Arial";
+    -fx-fill: #FFFFFF;
+    -fx-font-size: 25;
+    -fx-font-weight: bold;
+}
+
+.subtitle-text {
+    -fx-font-family: "Arial";
+    -fx-fill: #FFFFFF;
+    -fx-font-size: 18;
+    -fx-font-weight: bold;
+}
+
+/*  glyph icons style   */
+.glyph-icon {
+   -fx-fill: #FFFFFF; 
+}
+
+/* Buttons */
+.btn-general {
+    -fx-text-fill: #FFFFFF; 
+    -fx-font-size: 15;
+    -fx-font-weight: bold;
+}
+
+.btn-main {
+    -fx-background-color: #112233;  
+}
+
+.btn-update {
+    -fx-background-color: #707070;  
+}

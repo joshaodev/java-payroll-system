@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="887.0" stylesheets="@../style/appStyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="payrollsys.controllers.HomeController">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="666.0" spacing="50.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox>
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="logo-text" text="CONTA 10 - Consultoria e Serviços" />
+                  <HBox alignment="CENTER_LEFT" spacing="5.0">
+                     <children>
+                        <FontAwesomeIconView glyphName="MAP_MARKER" styleClass="glyph-black-icon" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="sublogo-text" text="Luanda, Kilamba Kiaxe, Sapú" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" spacing="5.0">
+                     <children>
+                        <FontAwesomeIconView glyphName="PHONE" styleClass="glyph-black-icon" />
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="sublogo-text" text="(+244) 934 34 41 67" />
+                     </children>
+                  </HBox>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </VBox>
+            <HBox alignment="CENTER" prefHeight="83.0" prefWidth="700.0">
+               <children>
+                  <VBox alignment="CENTER_LEFT" maxHeight="500.0" minWidth="498.0" prefHeight="119.0" prefWidth="498.0" styleClass="boxes" HBox.hgrow="ALWAYS">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="363.0" styleClass="statistics-box">
+                           <children>
+                              <FontAwesomeIconView glyphName="USERS" size="70" styleClass="glyph-black-icon" />
+                              <VBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="284.0" spacing="10.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="REGISTRADOS">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="numFuncionariosRegistrados" strokeType="OUTSIDE" strokeWidth="0.0" text="20">
+                                       <font>
+                                          <Font name="System Bold" size="30.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Número total de Funcionários registrados" wrappingWidth="394.0" />
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="83.0" prefWidth="700.0" spacing="20.0">
+               <children>
+                  <VBox alignment="CENTER_LEFT" prefHeight="135.0" styleClass="boxes" HBox.hgrow="ALWAYS">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="363.0" styleClass="statistics-box">
+                           <children>
+                              <FontAwesomeIconView glyphName="MARS" size="70" styleClass="glyph-black-icon" />
+                              <VBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="284.0" spacing="10.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="HOMENS">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="numFuncionariosHomensRegistrados" strokeType="OUTSIDE" strokeWidth="0.0" text="20">
+                                       <font>
+                                          <Font name="System Bold" size="30.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Número total de Funcionários homens registrados" wrappingWidth="394.0" />
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+                  <VBox alignment="CENTER_LEFT" prefHeight="135.0" styleClass="boxes" HBox.hgrow="ALWAYS">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="363.0" styleClass="statistics-box">
+                           <children>
+                              <FontAwesomeIconView glyphName="VENUS" size="70" styleClass="glyph-black-icon" />
+                              <VBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="284.0" spacing="10.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="MULHERES">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="numFuncionariosMulherRegistrados" strokeType="OUTSIDE" strokeWidth="0.0" text="20">
+                                       <font>
+                                          <Font name="System Bold" size="30.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Número total de Funcionários mulheres registrados" wrappingWidth="394.0" />
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="83.0" prefWidth="700.0" spacing="20.0">
+               <children>
+                  <VBox alignment="CENTER_LEFT" prefHeight="135.0" styleClass="boxes" HBox.hgrow="ALWAYS">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="363.0" styleClass="statistics-box">
+                           <children>
+                              <FontAwesomeIconView glyphName="BUILDING" size="70" styleClass="glyph-black-icon" />
+                              <VBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="284.0" spacing="10.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="DEPARTAMENTOS">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="numDepartamentosRegistrados" strokeType="OUTSIDE" strokeWidth="0.0" text="20">
+                                       <font>
+                                          <Font name="System Bold" size="30.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Número total de Departamentos registrados" wrappingWidth="394.0" />
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+                  <VBox alignment="CENTER_LEFT" prefHeight="135.0" styleClass="boxes" HBox.hgrow="ALWAYS">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="363.0" styleClass="statistics-box">
+                           <children>
+                              <FontAwesomeIconView glyphName="BRIEFCASE" size="70" styleClass="glyph-black-icon" />
+                              <VBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="284.0" spacing="10.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="CARGOS">
+                                       <font>
+                                          <Font name="System Bold" size="15.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="numCargosRegistrados" strokeType="OUTSIDE" strokeWidth="0.0" text="20">
+                                       <font>
+                                          <Font name="System Bold" size="30.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Número total de Cargos registrados" wrappingWidth="394.0" />
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

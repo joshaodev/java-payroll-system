@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" stylesheets="@../style/appStyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="payrollsys.controllers.UserConfigController">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <JFXTabPane VBox.vgrow="ALWAYS">
+               <tabs>
+                  <Tab fx:id="tabActualizarConta" text="Actualizar minha conta">
+                     <content>
+                        <VBox>
+                           <children>
+                              <HBox VBox.vgrow="ALWAYS">
+                                 <children>
+                                    <VBox maxWidth="300.0" prefHeight="313.0" prefWidth="300.0" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <VBox maxWidth="300.0" prefWidth="300.0" spacing="15.0" VBox.vgrow="ALWAYS">
+                                             <children>
+                                                <HBox prefHeight="40.0" prefWidth="380.0">
+                                                   <children>
+                                                      <JFXTextField fx:id="textFieldNomeUsuarioEditar" labelFloat="true" promptText="Nome de utilizador" HBox.hgrow="ALWAYS" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="40.0" prefWidth="380.0">
+                                                   <children>
+                                                      <JFXPasswordField fx:id="textFieldSenha1UsuarioEditar" labelFloat="true" prefHeight="25.0" prefWidth="141.0" promptText="Senha actual" HBox.hgrow="ALWAYS" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="40.0" prefWidth="380.0">
+                                                   <children>
+                                                      <JFXPasswordField fx:id="textFieldSenha2UsuarioEditar" labelFloat="true" prefHeight="25.0" prefWidth="141.0" promptText="Nova senha" HBox.hgrow="ALWAYS" />
+                                                   </children>
+                                                </HBox>
+                                                <HBox prefHeight="40.0" prefWidth="380.0">
+                                                   <children>
+                                                      <JFXPasswordField fx:id="textFieldSenha3UsuarioEditar" labelFloat="true" prefHeight="25.0" prefWidth="141.0" promptText="Confirmar nova senha" HBox.hgrow="ALWAYS" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="30.0" />
+                                             </padding>
+                                          </VBox>
+                                          <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="300.0" spacing="10.0">
+                                             <children>
+                                                <JFXButton onAction="#actualizarDadosUsuario" prefHeight="35.0" prefWidth="120.0" text="Actualizar">
+                                                   <styleClass>
+                                                      <String fx:value="btn-general" />
+                                                      <String fx:value="btn-main" />
+                                                   </styleClass>
+                                                   <graphic>
+                                                      <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../icons/Available%20Updates_26px.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic></JFXButton>
+                                                <JFXButton onAction="#cancelar" prefHeight="35.0" prefWidth="100.0" text="Cancelar">
+                                                   <graphic>
+                                                      <FontAwesomeIconView glyphName="CLOSE" size="20" />
+                                                   </graphic>
+                                                   <styleClass>
+                                                      <String fx:value="btn-general" />
+                                                      <String fx:value="btn-update" />
+                                                   </styleClass></JFXButton>
+                                             </children>
+                                             <padding>
+                                                <Insets left="10.0" />
+                                             </padding>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </content>
+                  </Tab>
+                  <Tab fx:id="tabGerenciarConta" text="Contas de utilizador">
+                     <content>
+                        <HBox spacing="10.0">
+                           <children>
+                              <VBox prefHeight="313.0" prefWidth="230.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Informações do usuário">
+                                       <VBox.margin>
+                                          <Insets left="10.0" top="10.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <VBox prefHeight="286.0" prefWidth="252.0" spacing="30.0" VBox.vgrow="ALWAYS">
+                                       <children>
+                                          <JFXTextField fx:id="nomeFuncionario_2" editable="false" labelFloat="true" promptText="Nome de funcionário" />
+                                          <JFXTextField fx:id="nomeUsuario_2" editable="false" labelFloat="true" promptText="Nome de usuario" />
+                                          <HBox spacing="20.0">
+                                             <children>
+                                                <JFXRadioButton fx:id="rdUsuarioNormal" text="Usuario Normal">
+                                                   <toggleGroup>
+                                                      <ToggleGroup fx:id="grupoUsuario" />
+                                                   </toggleGroup>
+                                                </JFXRadioButton>
+                                                <JFXRadioButton fx:id="rdAdministrador" text="Administrador" toggleGroup="$grupoUsuario" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="20.0" left="10.0" right="10.0" top="20.0" />
+                                       </padding>
+                                    </VBox>
+                                    <HBox prefHeight="50.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <JFXButton onAction="#actualizarTabela" text="Actualizar">
+                                             <styleClass>
+                                                <String fx:value="btn-general" />
+                                                <String fx:value="btn-main" />
+                                             </styleClass>
+                                             <graphic>
+                                                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../icons/Available%20Updates_26px.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic></JFXButton>
+                                          <JFXButton onAction="#cancelar" text="Cancelar">
+                                             <graphic>
+                                                <FontAwesomeIconView glyphName="CLOSE" size="20" />
+                                             </graphic>
+                                             <styleClass>
+                                                <String fx:value="btn-general" />
+                                                <String fx:value="btn-update" />
+                                             </styleClass></JFXButton>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                       </padding>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="363.0" prefWidth="300.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Lista de usuário">
+                                       <VBox.margin>
+                                          <Insets top="10.0" />
+                                       </VBox.margin>
+                                    </Text>
+                                    <VBox prefHeight="286.0" prefWidth="340.0" spacing="20.0" VBox.vgrow="ALWAYS">
+                                       <children>
+                                          <TableView fx:id="tabelaUsuarios" prefHeight="287.0" prefWidth="327.0" VBox.vgrow="ALWAYS">
+                                             <columns>
+                                                <TableColumn fx:id="colNomeUsuario" maxWidth="3000.0" prefWidth="133.0" text="Nome de usuário" />
+                                                <TableColumn fx:id="colNomeFuncionario" prefWidth="200.0" text="Nome de Funcionário" />
+                                             </columns>
+                                             <columnResizePolicy>
+                                                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                             </columnResizePolicy>
+                                          </TableView>
+                                       </children>
+                                       <padding>
+                                          <Insets right="10.0" />
+                                       </padding>
+                                    </VBox>
+                                    <HBox prefHeight="50.0" prefWidth="200.0" spacing="10.0">
+                                       <children>
+                                          <JFXButton fx:id="btnInserir" onAction="#loadInserirUsuario" text="Inserir">
+                                             <graphic>
+                                                <FontAwesomeIconView glyphName="PLUS" size="20" />
+                                             </graphic>
+                                             <styleClass>
+                                                <String fx:value="btn-general" />
+                                                <String fx:value="btn-main" />
+                                             </styleClass></JFXButton>
+                                          <JFXButton fx:id="btnEditar" onAction="#loadEditarUsuario" text="Editar">
+                                             <graphic>
+                                                <FontAwesomeIconView glyphName="EDIT" size="20" />
+                                             </graphic>
+                                             <styleClass>
+                                                <String fx:value="btn-general" />
+                                                <String fx:value="btn-edit" />
+                                             </styleClass></JFXButton>
+                                          <JFXButton fx:id="btnEliminar" onAction="#eliminarUsuario" text="Eliminar">
+                                             <graphic>
+                                                <FontAwesomeIconView glyphName="TRASH" size="20" />
+                                             </graphic>
+                                             <styleClass>
+                                                <String fx:value="btn-general" />
+                                                <String fx:value="btn-delete" />
+                                             </styleClass></JFXButton>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="10.0" top="10.0" />
+                                       </padding>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </content>
+                  </Tab>
+               </tabs>
+            </JFXTabPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

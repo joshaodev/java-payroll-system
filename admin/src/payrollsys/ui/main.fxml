@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="600.0" minWidth="950.0" prefHeight="600.0" prefWidth="950.0" stylesheets="@../style/appStyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="payrollsys.controllers.MainController">
+   <left>
+      <VBox prefHeight="550.0" prefWidth="250.0" styleClass="menu-bar" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" prefHeight="60.0" prefWidth="500.0">
+               <children>
+                  <ImageView fx:id="userImage" fitHeight="52.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/Manager_50px.png" />
+                     </image>
+                  </ImageView>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <JFXButton fx:id="btnUser" alignment="BASELINE_LEFT" focusTraversable="false" onAction="#loadUserConfig" prefHeight="20.0" prefWidth="190.0" styleClass="btn-username" text="Josemar Agostinho Oatanha" textAlignment="CENTER" textFill="WHITE" underline="true" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="12.0" />
+                           </font>
+                           <graphic>
+                              <FontAwesomeIconView glyphName="CIRCLE" styleClass="glyph-icon-online" />
+                           </graphic>
+                        </JFXButton>
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding></HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="200.0" styleClass="sub-menu-bar">
+               <children>
+                  <Text fill="#112233" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="sub-menu-bar-text" text="ESTATISTICAS">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Text>
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0">
+               <children>
+                  <JFXButton alignment="BASELINE_LEFT" graphicTextGap="5.0" onAction="#loadHome" prefHeight="30.0" prefWidth="500.0" styleClass="sidebar-btn" text="Tela Inicial">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="DASHBOARD" size="25" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="200.0" styleClass="sub-menu-bar">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="sub-menu-bar-text" text="GERIR FUNCIONÁRIOS">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Text>
+               </children>
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </HBox>
+            <HBox>
+               <children>
+                  <JFXButton alignment="BASELINE_LEFT" graphicTextGap="5.0" onAction="#loadPresencas" prefHeight="30.0" prefWidth="500.0" styleClass="sidebar-btn" text="Presenças">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="CALENDAR" size="25" styleClass="sidebar-btn-icon" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <JFXButton alignment="BASELINE_LEFT" graphicTextGap="5.0" onAction="#loadFuncionarios" prefHeight="30.0" prefWidth="500.0" styleClass="sidebar-btn" text="Funcionários">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="USERS" size="25" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <JFXButton alignment="BASELINE_LEFT" graphicTextGap="5.0" onAction="#loadHorasExtras" prefHeight="30.0" prefWidth="500.0" styleClass="sidebar-btn" text="Horas Extras">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/Overtime_26px.png" />
+                           </image></ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <JFXButton alignment="BASELINE_LEFT" graphicTextGap="5.0" onAction="#loadSaidasDoSistema" prefHeight="30.0" prefWidth="500.0" styleClass="sidebar-btn" text="Saídas do Sistema">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/Leave_26px.png" />
+                           </image></ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="200.0" styleClass="sub-menu-bar">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="sub-menu-bar-text" text="INFORMAÇÕES EMPRESA">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Text>
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </HBox>
+            <HBox>
+               <children>
+                  <JFXButton alignment="BASELINE_LEFT" graphicTextGap="5.0" onAction="#loadTurnos" prefHeight="30.0" prefWidth="500.0" styleClass="sidebar-btn" text="Turnos">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/Clock_26px.png" />
+                           </image></ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <JFXButton alignment="BASELINE_LEFT" graphicTextGap="5.0" onAction="#loadCargos" prefHeight="30.0" prefWidth="500.0" styleClass="sidebar-btn" text="Cargos">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="BRIEFCASE" size="25" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <JFXButton alignment="BASELINE_LEFT" graphicTextGap="5.0" onAction="#loadDepartamentos" prefHeight="30.0" prefWidth="500.0" styleClass="sidebar-btn" text="Departamentos">
+                     <graphic>
+                        <FontAwesomeIconView glyphName="BUILDING" size="25" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="30.0" prefWidth="200.0" styleClass="sub-menu-bar">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="sub-menu-bar-text" text="PAGAMENTOS">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Text>
+               </children>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </HBox>
+            <HBox>
+               <children>
+                  <JFXButton alignment="BASELINE_LEFT" graphicTextGap="5.0" onAction="#loadGerarFolhaDeSalario" prefHeight="30.0" prefWidth="500.0" styleClass="sidebar-btn" text="Folha de Salário">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/Document_26px.png" />
+                           </image></ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <JFXButton alignment="BASELINE_LEFT" graphicTextGap="5.0" onAction="#loadListaPagamento" prefHeight="30.0" prefWidth="500.0" styleClass="sidebar-btn" text="Lista de Pagamento">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/Document_26px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+            </HBox>
+            <HBox minHeight="30.0" prefHeight="30.0" prefWidth="250.0" VBox.vgrow="ALWAYS" />
+         </children>
+         <padding>
+            <Insets bottom="5.0" top="5.0" />
+         </padding>
+      </VBox>
+   </left>
+   <top>
+      <HBox prefHeight="50.0" prefWidth="200.0" styleClass="top-bar" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="250.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="subtitle-text" text="Painel do Administrador">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <JFXButton alignment="BASELINE_LEFT" focusTraversable="false" graphicTextGap="5.0" onAction="#sair" prefHeight="30.0" prefWidth="180.0" styleClass="btn-general" text="Terminar Sessão">
+                     <graphic>
+                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/Exit_26px.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
+               </children>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+            </HBox>
+         </children>
+      </HBox>
+   </top>
+</BorderPane>

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportSaidas" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6641a205-9cdb-496a-b1c6-fd6b497bcbbd">
+	<property name="ireport.zoom" value="0.9090909090909096"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="dataActual" class="java.util.Date"/>
+	<queryString>
+		<![CDATA[SELECT
+     saida.`tipoSaida` AS saida_tipoSaida,
+     saida.`dataInicio` AS saida_dataInicio,
+     saida.`dataFim` AS saida_dataFim,
+     saida.`motivoSaida` AS saida_motivoSaida,
+     funcionario.`nome` AS funcionario_nome
+FROM
+     `funcionario` funcionario INNER JOIN `saida` saida ON funcionario.`idFuncionario` = saida.`idFuncionario`
+WHERE
+     saida.`dataFim` >= $P{dataActual}]]>
+	</queryString>
+	<field name="saida_tipoSaida" class="java.lang.String"/>
+	<field name="saida_dataInicio" class="java.sql.Date"/>
+	<field name="saida_dataFim" class="java.sql.Date"/>
+	<field name="saida_motivoSaida" class="java.lang.String"/>
+	<field name="funcionario_nome" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="35" width="152" height="15" uuid="4dd833a3-c1dd-413a-818a-2976f688eec8"/>
+				<text><![CDATA[(+244) 934 34 41 67]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="152" height="15" uuid="30e0a49d-42fd-4092-9e70-11654325ab8c"/>
+				<text><![CDATA[Luanda, Kilamba Kiaxe, Sapú]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="275" height="20" uuid="d5c957f4-b33a-4402-a13e-d9dfff9bf4d0"/>
+				<textElement>
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CONTA 10 - Consultoria e Serviços]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="368" y="20" width="187" height="15" uuid="c3953cbe-2e36-45cb-99f9-1dc650a0cd9c"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="15" width="304" height="20" uuid="b32cf042-be38-4b32-9fa0-4fb5af758196"/>
+				<textElement>
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lista dos funcionários fora do sistema]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="33" width="555" height="2" uuid="11d1d31b-b338-4d09-9e17-307f020e2e9c"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="21" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="135" height="20" uuid="06923975-b7da-4c74-895c-31f582833847"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Funcionario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="135" y="1" width="117" height="20" uuid="16d6c9f3-937f-4a68-a203-95a9e521989e"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tipo de Saida]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="255" y="1" width="100" height="20" uuid="0c527ad3-8577-4a52-81f0-ab76e989d73b"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Motivo da saída]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="388" y="1" width="75" height="20" uuid="bcff9c0f-d040-4f94-b865-f3b6f4e2dd07"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Inicio da saída]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="473" y="0" width="75" height="20" uuid="e274d528-5763-4dc5-a444-894b26f6e774"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fim da saída]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="39" splitType="Stretch">
+			<textField>
+				<reportElement x="135" y="0" width="117" height="20" uuid="f65f6aba-c036-480f-95da-df98bce3fbb2"/>
+				<textFieldExpression><![CDATA[$F{saida_tipoSaida}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="255" y="0" width="133" height="39" uuid="ba709bdc-7a8b-4d77-9de3-02014f84f9c5"/>
+				<textFieldExpression><![CDATA[$F{saida_motivoSaida}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="473" y="0" width="40" height="20" uuid="ecb51efb-762f-4d94-a2e8-ebbd425ca38b"/>
+				<textFieldExpression><![CDATA[$F{saida_dataFim}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="388" y="0" width="40" height="20" uuid="8f767e8d-118e-457b-a27f-fc5d364343ee"/>
+				<textFieldExpression><![CDATA[$F{saida_dataInicio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="135" height="39" uuid="fe9f7c7b-f07e-4a1e-b471-59af1a984565"/>
+				<textFieldExpression><![CDATA[$F{funcionario_nome}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="423" y="34" width="80" height="20" uuid="b0de4014-3ee2-4db8-ba80-1fcd24632ee0"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="503" y="34" width="40" height="20" uuid="6f617302-897f-4668-a0ef-a14a66395c07"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

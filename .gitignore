@@ -1,0 +1,31 @@
+##############################
+## Java
+##############################
+.mtj.tmp/
+*.class
+*.jar
+*.war
+*.ear
+*.nar
+hs_err_pid*
+
+##############################
+## NetBeans
+##############################
+admin/nbproject/private/
+admin/build/
+admin/nbbuild/
+admin/dist/
+admin/nbdist/
+admin/test/
+
+funcionario/nbproject/private/
+funcionario/build/
+funcionario/nbbuild/
+funcionario/dist/
+funcionario/nbdist/
+funcionario/test/
+funcionario/libs/
+nbactions.xml
+nb-configuration.xml
+

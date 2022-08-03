@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="payrollsys.controllers.MarcarPrensencaController">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" prefWidth="200.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Controlo de Presenças">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                  </Text>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <JFXTextField fx:id="textFieldCodigoFuncionario" labelFloat="true" promptText="Código do funcionario" HBox.hgrow="ALWAYS">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </JFXTextField>
+                  <JFXButton onAction="#pesquisarFuncionario" prefHeight="31.0" prefWidth="100.0" text="Pesquisar" />
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+               </padding>
+            </HBox>
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+               <children>
+                  <ImageView fitHeight="157.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../Payroll%20System%20-%20Admin/src/payroll/images/profile.jpg" />
+                     </image>
+                  </ImageView>
+                  <VBox prefHeight="200.0" prefWidth="100.0" spacing="5.0" HBox.hgrow="ALWAYS">
+                     <children>
+                        <VBox prefHeight="43.0" prefWidth="375.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Nome Funcionário">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="labelNomeFuncionario" strokeType="OUTSIDE" strokeWidth="0.0" text="--- ---- ---">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="43.0" prefWidth="375.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Cargo">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="labelCargoFuncionario" strokeType="OUTSIDE" strokeWidth="0.0" text="--- --- ---">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="43.0" prefWidth="375.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Departamento">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="labelDepartamentoFuncionario" strokeType="OUTSIDE" strokeWidth="0.0" text="--- --- ---">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="43.0" prefWidth="375.0">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Turno">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font>
+                              </Text>
+                              <Text fx:id="labelTurnoFuncionario" strokeType="OUTSIDE" strokeWidth="0.0" text="--- --- ---">
+                                 <font>
+                                    <Font size="15.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </VBox>
+                     </children>
+                  </VBox>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER" prefWidth="200.0">
+               <children>
+                  <HBox spacing="100.0">
+                     <children>
+                        <JFXRadioButton fx:id="rbEntrada" selected="true" text="Entrada">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </JFXRadioButton>
+                        <JFXRadioButton fx:id="rbSaida" text="Saída">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </JFXRadioButton>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefWidth="200.0">
+               <children>
+                  <HBox spacing="5.0">
+                     <children>
+                        <JFXButton prefHeight="31.0" prefWidth="200.0" text="Marcar Presença">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton prefHeight="31.0" prefWidth="200.0" text="Ver Faltas">
+                           <font>
+                              <Font size="15.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                     </padding>
+                  </HBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" prefWidth="200.0">
+               <children>
+                  <Text fx:id="labelDataPresença" layoutX="539.0" layoutY="28.0" strokeType="OUTSIDE" strokeWidth="0.0" text="12/07/2021" />
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+               </padding>
+            </HBox>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" VBox.vgrow="ALWAYS">
+               <children>
+                  <TableView fx:id="tabelaPresencas" prefHeight="217.0" prefWidth="580.0" VBox.vgrow="ALWAYS">
+                     <columns>
+                        <TableColumn fx:id="colCodigoFuncionario" prefWidth="75.0" text="Codigo Funcionário" />
+                        <TableColumn fx:id="colNomeFuncionario" maxWidth="7000.0" prefWidth="75.0" text="Nome Funcionário" />
+                        <TableColumn fx:id="colTurnoFuncionario" maxWidth="3000.0" prefWidth="75.0" text="Turno" />
+                        <TableColumn fx:id="colMarcacaoEntrada" maxWidth="4000.0" prefWidth="75.0" text="Entrada" />
+                        <TableColumn fx:id="colMarcacaoSaida" maxWidth="4000.0" prefWidth="75.0" text="Saída" />
+                     </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+               </children>
+               <padding>
+                  <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+               </padding>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
